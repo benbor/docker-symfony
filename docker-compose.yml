@@ -17,7 +17,7 @@ services:
                 TIMEZONE: ${TIMEZONE}
         volumes:
             - ${SYMFONY_APP_PATH}:/var/www/symfony
-            - ./logs/symfony:/var/www/symfony/app/logs
+            - ./logs/symfony:/var/www/symfony/var/log
     nginx:
         build: nginx
         ports:
