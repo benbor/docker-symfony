@@ -19,7 +19,7 @@ services:
                 TIMEZONE: ${TIMEZONE}
         volumes:
             - ${SYMFONY_APP_PATH}:/var/www/symfony
-            - ./logs/symfony:/var/www/symfony/var/log
+            - ${SYMFONY_APP_PATH}/var/log:/var/www/symfony/var/log
     nginx:
         build: nginx
         ports:
@@ -38,3 +38,8 @@ services:
         volumes_from:
             - php
             - nginx
+    redis:
+        image: redis:4.0.6
+        container_name: redis
+        ports:
+            - 6379:6379
