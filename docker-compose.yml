@@ -18,8 +18,8 @@ services:
             args:
                 TIMEZONE: ${TIMEZONE}
         volumes:
-            - ${SYMFONY_APP_PATH}:/var/www/symfony
-            - ${SYMFONY_APP_PATH}/var/log:/var/www/symfony/var/log
+            - ${SYMFONY_APP_PATH}:/var/www/symfony:cached
+            - ${SYMFONY_APP_PATH}/var/log:/var/www/symfony/var/log:cached
         environment:
            - PHP_IDE_CONFIG
     nginx:
